@@ -1,38 +1,9 @@
-<%@page import="entity.Category"%>
-<%@page import="java.util.List"%>
-<%@page import="dao.ProductDAO"%>
-<%@page import="dao.CategoryDAO"%>
-<%@page import="entity.Product"%>
-<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-ProductDAO productDAO = new ProductDAO();
-CategoryDAO categoryDAO = new CategoryDAO();
-
-List<Product> productList = null;
-
-String categoryId = request.getParameter("categoryId");
-String action = request.getParameter("action");
-String searchValue = request.getParameter("searchValue");
-
-if ("SHOW_ALL".equals(action)) {
-	productList = productDAO.getAllProducts();
-} else if (categoryId != null) {
-	productList = productDAO.getProductByCategoryId(categoryId);
-}else if (searchValue != null) {
-	productList = productDAO.search(searchValue);
-} else {
-	productList = productDAO.getLatestProducts();
-}
-
-pageContext.setAttribute("latestProduct", productList);
-
-pageContext.setAttribute("categories", categoryDAO.getAllCategories());
-%>
 
 <!DOCTYPE html>
 <html>
@@ -83,11 +54,11 @@ pageContext.setAttribute("categories", categoryDAO.getAllCategories());
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav  ">
 						<li class="nav-item active"><a class="nav-link"
-							href="index.jsp">Home <span class="sr-only">(current)</span></a>
+							href="Home">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<c:forEach items="${categories}" var="category">
 							<li class="nav-item"><a class="nav-link"
-								href="index.jsp?categoryId=${category.id }">
+								href="Home?categoryId=${category.id }">
 									${category.name} </a></li>
 						</c:forEach>
 
