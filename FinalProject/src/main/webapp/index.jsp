@@ -75,7 +75,7 @@
 						</c:if>
 						
 						<c:if test="${ empty user}">
-							<a href="login.jsp"> <i class="fa fa-user"
+							<a href="LoginController"> <i class="fa fa-user"
 							aria-hidden="true"></i> <span> Login </span>
 						</a> 
 								
@@ -106,7 +106,7 @@
 		<div class="container">
 		<div class="container container-bg">
 			<div class="row">
-		<form action="index.jsp">
+		<form action="SearchController">
 						<div>
 							<input type="text" placeholder="Product Name" name = searchValue />
 						</div>
@@ -124,7 +124,7 @@
 				<c:forEach items="${latestProduct }" var="product">
 					<div class="col-sm-6 col-md-4 col-lg-3">
 						<div class="box">
-							<a href="product-detail.jsp?productId=${product.id}">
+							<a href="ProductDetailController?productId=${product.id}">
 								<div class="img-box">
 									<img src="images/${product.imgName }" alt="">
 								</div>

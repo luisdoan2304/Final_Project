@@ -51,7 +51,7 @@ public class ProductDAO {
 	}
 
 
-	public static Product getProductById(int productId) throws SQLException {
+	public Product getProductById(int productId) throws SQLException {
 		Connection conn = null;;
 		try {
 			conn = MySQLConnUtils.getMySQLConnection();

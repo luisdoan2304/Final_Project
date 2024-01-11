@@ -1,25 +1,10 @@
-<%@page import="java.util.List"%>
-<%@page import="dao.ProductDAO"%>
-<%@page import="entity.Product"%>
-<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-	Integer productId = null;
-	String productIdFromReq = request.getParameter("productId");
-	
-	//convert string to int
-	if (productIdFromReq != null) {
-		productId = Integer.parseInt(productIdFromReq);
-	}
-	
-	Product product = ProductDAO.getProductById(productId);
-	pageContext.setAttribute("product", product);
 
-%>
 
 <!DOCTYPE html>
 <html>
@@ -70,7 +55,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav  ">
 						<li class="nav-item active"><a class="nav-link"
-							href="index.jsp">Home <span class="sr-only">(current)</span></a>
+							href="Home">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="shop.html">
 								Shop </a></li>
