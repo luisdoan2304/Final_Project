@@ -67,14 +67,14 @@
 					<div class="user_option">
 						 
 						
-						<c:if test="${not empty user}">
-							<a href="login.jsp"> <i class="fa fa-user"
-							aria-hidden="true"></i> <span> Hello: ${user.userName } Logout </span>
+						<c:if test="${not empty sessionScope.user}">
+							<a href="logout"> <i class="fa fa-user"
+							aria-hidden="true"></i> <span> Hello: ${sessionScope.user.userName } Logout </span>
 						</a> 
 								
 						</c:if>
 						
-						<c:if test="${ empty user}">
+						<c:if test="${ empty sessionScope.user}">
 							<a href="LoginController"> <i class="fa fa-user"
 							aria-hidden="true"></i> <span> Login </span>
 						</a> 

@@ -121,23 +121,25 @@
 		</c:if>
 		
 			<div class="heading_container ">
-				<h2 class="">LOGIN</h2>
+				<h2 class="">REGISTER</h2>
 			</div>
 		</div>
 		<div class="container container-bg">
 			<div class="row">
 				
 				<div class="col-md-6 col-lg-5 px-0">
-					<form action="LoginController" method = "post">
+					<form action="register" method = "post">
 						<div>
 							<input type="text" name="userName" placeholder="UserName" />
 						</div>
 						<div>
 							<input type="password" name= "password" placeholder="Password" />
 						</div>
-						
+						<div>
+							<input type="text" name="email" placeholder="Email" />
+						</div>
 						<div class="d-flex ">
-							<button>SUBMIT</button>
+							<button>REGISTER</button>
 						</div>
 					</form>
 				</div>

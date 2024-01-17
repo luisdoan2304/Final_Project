@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
 import entity.User;
@@ -50,8 +51,13 @@ public class LoginController extends HttpServlet {
 
 		if (isLogin) {
 
-			request.setAttribute("user", user);
-			getServletContext().getRequestDispatcher("/Home").forward(request, response);
+			
+//			request.setAttribute("user", user);
+//			getServletContext().getRequestDispatcher("/Home").forward(request, response);
+			
+			HttpSession loginSession = request.getSession();
+			loginSession.setAttribute("user", user );
+			response.sendRedirect(request.getContextPath() + "/Home");
 
 		} else {
 			String message = "Username and Password are incorrect!!!";
