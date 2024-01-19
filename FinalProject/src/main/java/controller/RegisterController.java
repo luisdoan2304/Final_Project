@@ -57,7 +57,7 @@ public class RegisterController extends HttpServlet {
         	
         	String message = "username or email is already existed!!!";
         	request.setAttribute("message", message);
-			getServletContext().getRequestDispatcher("/register.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/register.jsp").forward(request, response);                                                                                                      
         }
         
         

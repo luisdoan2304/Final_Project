@@ -138,6 +138,9 @@
 						<div>
 							<input type="text" name="email" placeholder="Email" />
 						</div>
+						
+						
+						
 						<div class="d-flex ">
 							<button>REGISTER</button>
 						</div>
