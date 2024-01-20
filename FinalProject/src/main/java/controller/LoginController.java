@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
-import entity.User;
+import entityLombok.User;
 
 /**
  * Servlet implementation class LoginController

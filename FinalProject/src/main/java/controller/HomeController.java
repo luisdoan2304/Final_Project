@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoryDAO;
 import dao.ProductDAO;
-import entity.Category;
-import entity.Product;
+import entityLombok.Category;
+import entityLombok.Product;
 
 /**
  * Servlet implementation class HomeController

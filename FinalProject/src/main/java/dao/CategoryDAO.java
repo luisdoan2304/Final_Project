@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.Category;
-import entity.Product;
+import entityLombok.Category;
+
 
 public class CategoryDAO {
 	

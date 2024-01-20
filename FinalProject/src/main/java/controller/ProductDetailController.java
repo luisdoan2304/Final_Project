@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ProductDAO;
-import entity.Product;
+import entityLombok.Product;
 
 /**
  * Servlet implementation class ProductDetailController

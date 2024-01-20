@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.Product;
+import entityLombok.Product;
 
 public class ProductDAO {
 		
