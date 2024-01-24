@@ -80,9 +80,9 @@
 					</div>
 					<br>
 					<form action="Cart">
-					<input type ="text" value ="ADD TO CART" name="ACTION" hidden = "true">
-					<input type ="text" value ="${product.id} }" name="productId" hidden = "true">
-					<input type ="submit" value ="ADD TO CART">
+						<input type ="text" value ="ADD_TO_CART" name="ACTION" hidden = "true">
+						<input type ="text" value ="${product.id}" name="productId" hidden = "true">
+						<input type ="submit" value ="ADD TO CART">
 					</form>
 				</div>
 				

@@ -3,7 +3,9 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -55,26 +57,50 @@ public class CartController extends HttpServlet {
 
 	private void addToCart(HttpServletRequest request, HttpServletResponse response) {
 		String productId = request.getParameter("productId");
+		Integer productIdInteger = Integer.parseInt(productId);
 		
-		ArrayList<Integer> shoppingCartItems;
+		//ArrayList<Integer> shoppingCartItems;
+		
+		Map<Integer, Integer>shoppingCartItems;
+		
+		Integer itemQuantity = null;
 		
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("cart") == null) {
 			
-			shoppingCartItems = new ArrayList<Integer>();
+			shoppingCartItems = new HashMap<Integer, Integer>();
 			
 			
 		}else {
 			
-			shoppingCartItems = (ArrayList<Integer>) session.getAttribute("cart");
+			shoppingCartItems = (HashMap<Integer, Integer>) session.getAttribute("cart");
 		}
 		
-		shoppingCartItems.add(Integer.parseInt(productId));
+		if(shoppingCartItems.containsKey(productIdInteger)){
+			
+			Integer oldItemQuantity;
+			
+			oldItemQuantity = shoppingCartItems.get(productIdInteger);
+			
+			 itemQuantity = oldItemQuantity +1;
+			
+			
+		}else {
+			
+			itemQuantity = 1;
+		}
+		
+		shoppingCartItems.put(productIdInteger, itemQuantity);
 		session.setAttribute("cart", shoppingCartItems);
 		
+		// Traverse the HashMap using keySet
+       // for (Integer key : shoppingCartItems.keySet()) {
+        //    System.out.println("Key: " + key + ", Value: " + shoppingCartItems.get(key));
+       // }
+		
 		try {
-			response.sendRedirect("Product?productId=" + productId);
+			response.sendRedirect("ProductDetailController?productId=" + productId);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
